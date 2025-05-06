@@ -33,6 +33,29 @@ def dict_keys_count(input_dict: Dict[str, int], val: int = 10) -> List[str]:
     return [k for k, v in input_dict.items() if v > val]
 
 
+def intersection(nums1: list, nums2: list):
+    """
+    LeetCode 349
+    Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+    Output: [9,4]
+    Explanation: [4,9] is also accepted.
+    """
+    return list(set(nums1) & set(nums2))
+
+
+def num_jewels_stones(jewels, stones):
+    """
+    LeetCode 771
+    Input: jewels = "aA", stones = "aAAbbbb"
+    Output: 3
+    """
+    my_jewels = 0
+    for stone in list(stones):
+        if stone in list(jewels):
+            my_jewels += 1
+    return my_jewels
+
+
 if __name__ == "__main__":
     # Task 1
     result = deduplicate_with_order(input_list=[1, 2, 2, 3, 4, 3])
@@ -49,3 +72,11 @@ if __name__ == "__main__":
     # Task 4
     result = dict_keys_count({"first": 22, "second": 1, "third": 9})
     assert result == ["first"]
+
+    # Task 5 LeetCode 349
+    result = intersection([4, 9, 5], [9, 4, 9, 8, 4])
+    assert result == [9, 4]
+
+    # Task 6 LeetCode 771
+    result = num_jewels_stones(jewels="aA", stones="aAAbbbb")
+    assert result == 3
