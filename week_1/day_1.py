@@ -75,6 +75,6 @@ if __name__ == "__main__":
     result = intersection([4, 9, 5], [9, 4, 9, 8, 4])
     assert result == [9, 4]
 
-    # Task 6 LeetCode 771
+    # Task 6 LeetCode 771 test
     result = num_jewels_stones(jewels="aA", stones="aAAbbbb")
     assert result == 3
