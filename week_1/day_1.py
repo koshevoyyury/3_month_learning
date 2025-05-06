@@ -9,14 +9,9 @@ from typing import Dict, Set, List
 
 
 def deduplicate_with_order(input_list: list) -> list:
-    input_set = set()
-    result = []
-    for n in input_list:
-        if n not in input_set:
-            input_set.add(n)
-            result.append(n)
-
-    return result
+    # fromkeys removes duplicates and keep order from python 3.7
+    unique = list(dict.fromkeys(input_list))
+    return unique
 
 
 def count_char_in_string(input_str: str) -> Dict[str, int]:
@@ -30,7 +25,8 @@ def count_char_in_string(input_str: str) -> Dict[str, int]:
 
 
 def lower_case_vowels(input_str: str) -> Set[str]:
-    return set(v for v in input_str.lower() if v in {'a', 'e', 'i', 'o', 'u'})
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    return set(v for v in input_str.lower() if v in vowels)
 
 
 def dict_keys_count(input_dict: Dict[str, int], val: int = 10) -> List[str]:
