@@ -49,11 +49,9 @@ def num_jewels_stones(jewels, stones):
     Input: jewels = "aA", stones = "aAAbbbb"
     Output: 3
     """
-    my_jewels = 0
-    for stone in list(stones):
-        if stone in list(jewels):
-            my_jewels += 1
-    return my_jewels
+    # Even if jewels are unique changing it to set will add speed
+    jewels_set = set(jewels)
+    return sum(1 for s in stones if s in jewels_set)
 
 
 if __name__ == "__main__":
