@@ -1,19 +1,17 @@
-"""Practice Tasks
-1. **Deduplicate with order preserved**
-   * Input: `[1, 2, 2, 3, 4, 3]` → Output: `[1, 2, 3, 4]`
-2. **Count characters in a string using dict**
-3. **Write a function that returns the set of unique lowercase vowels in a string**
-4. **Create a list of all keys in a dictionary where the value is greater than 10**"""
+"""Practice Tasks"""
 
 from typing import Dict, Set, List
 
 
+# 1. **Deduplicate with order preserved**
+#   * Input: `[1, 2, 2, 3, 4, 3]` → Output: `[1, 2, 3, 4]`
 def deduplicate_with_order(input_list: list) -> list:
     # fromkeys removes duplicates and keep order from python 3.7
     unique = list(dict.fromkeys(input_list))
     return unique
 
 
+# 2. **Count characters in a string using dict**
 def count_char_in_string(input_str: str) -> Dict[str, int]:
     char_dict = {}
     for char in input_str:
@@ -24,18 +22,20 @@ def count_char_in_string(input_str: str) -> Dict[str, int]:
     return char_dict
 
 
+# 3. **Write a function that returns the set of unique lowercase vowels in a string**
 def lower_case_vowels(input_str: str) -> Set[str]:
     vowels = {'a', 'e', 'i', 'o', 'u'}
     return set(v for v in input_str.lower() if v in vowels)
 
 
+# 4. **Create a list of all keys in a dictionary where the value is greater than 10**"""
 def dict_keys_count(input_dict: Dict[str, int], val: int = 10) -> List[str]:
     return [k for k, v in input_dict.items() if v > val]
 
 
+# LeetCode 349
 def intersection(nums1: list, nums2: list):
     """
-    LeetCode 349
     Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
     Output: [9,4]
     Explanation: [4,9] is also accepted.
@@ -43,9 +43,9 @@ def intersection(nums1: list, nums2: list):
     return list(set(nums1) & set(nums2))
 
 
+# LeetCode 771
 def num_jewels_stones(jewels, stones):
     """
-    LeetCode 771
     Input: jewels = "aA", stones = "aAAbbbb"
     Output: 3
     """
